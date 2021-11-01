@@ -1,0 +1,73 @@
+/* speed for toggling between light and dark mode */
+
+:root {
+    --toggle-speed: 200ms;
+}
+
+/* global stuff */
+
+body {
+    font-family: sans-serif;
+    line-height: 1.5;
+    font-size: 20px;
+    margin: 0;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 40px 20px;
+}
+
+/* main styling (light mode) */
+
+main {
+    background-color: white;
+    color: #444;
+    transition: all var(--toggle-speed) linear;
+}
+
+main h1,
+main h2 {
+    color: black;
+    transition: color var(--toggle-speed) linear;
+}
+
+/* dark mode toggler and label */
+
+#darkModeToggler {
+    display: none;
+}
+
+#darkModeLabel {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    transition: all var(--toggle-speed) linear, transform 120ms linear;
+    cursor: pointer;
+}
+
+/* styling of dark mode */
+
+#darkModeToggler:checked ~ #darkModeLabel {
+    transform: scaleX(-1);
+    color: #eee;
+}
+
+#darkModeToggler:checked ~ main {
+    background-color: #222;
+    color: #eee;
+}
+
+#darkModeToggler:checked ~ main h1,
+#darkModeToggler:checked ~ main h2 {
+    color: skyblue;
+}
+
+/* auxiliary class for two columns */
+
+.two-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
