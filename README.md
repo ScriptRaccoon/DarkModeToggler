@@ -1,5 +1,5 @@
 # Dark Mode Toggler
 
-A simple CSS-only solution for switching between dark and light mode.
+A simple solution for switching between dark and light mode. This branch is based on JavaScript.
 
 Demo: https://cssdarkmodetoggler.netlify.app
