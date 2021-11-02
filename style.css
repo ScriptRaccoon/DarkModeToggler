@@ -33,6 +33,18 @@ main h2 {
     transition: color var(--toggle-speed) linear;
 }
 
+/* controls (not possible with CSS-only solution) */
+
+#controls {
+    padding: 0px 10px;
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #aaa;
+    transition: all var(--toggle-speed) linear;
+}
+
 /* dark mode toggler and label */
 
 #darkModeToggler {
@@ -40,27 +52,25 @@ main h2 {
 }
 
 #darkModeLabel {
-    position: absolute;
-    top: 20px;
-    right: 20px;
     transition: all var(--toggle-speed) linear, transform 120ms linear;
     cursor: pointer;
 }
 
 /* styling of dark mode */
 
-#darkModeToggler:checked ~ #darkModeLabel {
+.dark #darkModeLabel {
     transform: scaleX(-1);
     color: #eee;
 }
 
-#darkModeToggler:checked ~ main {
+.dark main,
+.dark #controls {
     background-color: #222;
     color: #eee;
 }
 
-#darkModeToggler:checked ~ main h1,
-#darkModeToggler:checked ~ main h2 {
+.dark h1,
+.dark h2 {
     color: skyblue;
 }
 
